@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Annai Hospital | Premium Healthcare in Thiruppanandal</title>
+  <meta name="description" content="Annai Hospital - 24/7 premium healthcare in Thiruppanandal, Tamil Nadu. Obstetrics, Gynecology, Infertility, Orthopedics, Pediatrics & General Surgery." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --teal:        #0b6b6f;
+      --teal-dark:   #084f52;
+      --teal-mid:    #0d8589;
+      --teal-light:  #e5f4f4;
+      --teal-xlight: #f0f9f9;
+      --gold:        #b8822a;
+      --gold-light:  #fdf3e3;
+      --gold-bright: #d4a044;
+      --white:       #ffffff;
+      --off-white:   #f7f9fa;
+      --cream:       #faf8f5;
+      --text:        #141e2b;
+      --text-muted:  #5c6d82;
+      --text-light:  #8a9ab0;
+      --border:      #dce6ec;
+      --border-light:#edf2f5;
+      --shadow-sm:   0 1px 8px rgba(11,107,111,.08);
+      --shadow:      0 4px 20px rgba(11,107,111,.12);
+      --shadow-lg:   0 12px 48px rgba(11,107,111,.16);
+      --shadow-xl:   0 24px 80px rgba(11,107,111,.20);
+      --radius:      10px;
+      --radius-lg:   16px;
+      --nav-h:       72px;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',sans-serif;color:var(--text);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased}
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+    button{cursor:pointer;border:none;background:none;font-family:inherit}
+    ul{list-style:none}
+    h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;font-weight:600;line-height:1.2}
+    h1{font-size:clamp(2.4rem,5.5vw,3.8rem);letter-spacing:-.01em}
+    h2{font-size:clamp(1.8rem,3.8vw,2.8rem)}
+    h3{font-size:1.35rem}
+    p{font-size:1rem;line-height:1.75}
+
+    .container{max-width:1140px;margin:0 auto;padding:0 28px}
+    .section{padding:96px 0}
+    .section-alt{background:var(--cream)}
+    .badge{display:inline-flex;align-items:center;gap:6px;font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);background:var(--gold-light);padding:5px 14px;border-radius:20px;margin-bottom:16px;border:1px solid rgba(184,130,42,.15)}
+    .badge::before{content:'✦';font-size:.6rem}
+    .section-title{margin-bottom:12px;color:var(--text)}
+    .section-sub{color:var(--text-muted);font-size:1.05rem;max-width:540px;font-weight:300}
+    .section-header{margin-bottom:56px}
+    .btn{display:inline-flex;align-items:center;gap:9px;padding:14px 30px;border-radius:var(--radius);font-size:.92rem;font-weight:600;transition:all .25s ease;letter-spacing:.01em}
+    .btn-primary{background:linear-gradient(135deg,var(--teal-mid),var(--teal-dark));color:var(--white);box-shadow:0 4px 16px rgba(11,107,111,.28)}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(11,107,111,.38)}
+    .btn-emergency{background:linear-gradient(135deg,#d63031,#a93226);color:var(--white);animation:pulse-red 2.5s infinite;box-shadow:0 4px 16px rgba(192,57,43,.3)}
+    .btn-emergency:hover{transform:translateY(-2px)}
+    .btn-outline{border:1.5px solid var(--teal);color:var(--teal);background:transparent}
+    .btn-outline:hover{background:var(--teal);color:var(--white)}
+    .btn-ghost{border:1.5px solid rgba(255,255,255,.35);color:rgba(255,255,255,.9);background:transparent}
+    .btn-ghost:hover{background:rgba(255,255,255,.12);border-color:white;color:white}
+    @keyframes pulse-red{0%,100%{box-shadow:0 0 0 0 rgba(192,57,43,.4)}50%{box-shadow:0 0 0 12px rgba(192,57,43,0)}}
+    @keyframes blink{0%,100%{opacity:1}50%{opacity:.5}}
+
+    /* NAVBAR */
+    #navbar{position:fixed;top:0;left:0;right:0;height:var(--nav-h);background:rgba(255,255,255,.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--border-light);z-index:1000;transition:box-shadow .3s}
+    #navbar.scrolled{box-shadow:var(--shadow);border-bottom-color:var(--border)}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;height:var(--nav-h)}
+    .nav-logo{display:flex;align-items:center;gap:11px}
+    .nav-logo-text .name{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:1.25rem;color:var(--teal-dark);display:block;letter-spacing:-.01em;line-height:1.15}
+    .nav-logo-text .tagline{font-size:.68rem;color:var(--text-muted);letter-spacing:.06em;text-transform:uppercase}
+    .nav-links{display:flex;align-items:center;gap:32px}
+    .nav-links a{font-size:.875rem;font-weight:500;color:var(--text-muted);transition:color .2s}
+    .nav-links a:hover{color:var(--teal)}
+    .nav-emergency{background:linear-gradient(135deg,#d63031,#a93226);color:white;padding:9px 20px;border-radius:8px;font-size:.82rem;font-weight:600;display:flex;align-items:center;gap:6px;transition:transform .2s,box-shadow .2s;box-shadow:0 2px 10px rgba(192,57,43,.25)}
+    .nav-emergency:hover{transform:translateY(-1px)}
+    .nav-hamburger{display:none;flex-direction:column;gap:5px;padding:8px}
+    .nav-hamburger span{display:block;width:24px;height:2px;background:var(--text);border-radius:2px;transition:all .3s}
+    .mobile-menu{display:none;position:fixed;top:var(--nav-h);left:0;right:0;background:white;border-bottom:1px solid var(--border);padding:20px 28px;z-index:999;flex-direction:column;gap:4px;box-shadow:var(--shadow)}
+    .mobile-menu.open{display:flex}
+    .mobile-menu a{font-size:.95rem;font-weight:500;color:var(--text);padding:12px 0;border-bottom:1px solid var(--border-light)}
+
+    /* HERO */
+    #hero{min-height:100vh;padding-top:var(--nav-h);display:flex;align-items:center;position:relative;overflow:hidden;background:linear-gradient(160deg,#f0f9f9 0%,#faf8f5 45%,#fdf3e3 100%)}
+    #hero::before{content:'';position:absolute;top:-160px;right:-120px;width:640px;height:640px;background:radial-gradient(circle,rgba(11,107,111,.07) 0%,transparent 68%);border-radius:50%;pointer-events:none}
+    .hero-line{position:absolute;top:0;bottom:0;right:calc(50% - 20px);width:1px;background:linear-gradient(to bottom,transparent,rgba(11,107,111,.1) 30%,rgba(11,107,111,.1) 70%,transparent);pointer-events:none}
+    .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;padding:80px 0;position:relative;z-index:1}
+    .hero-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+    .hero-eyebrow-line{width:36px;height:2px;background:var(--gold)}
+    .hero-eyebrow-text{font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+    .hero-tamil{font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:var(--teal);font-weight:500;font-style:italic;margin-bottom:10px;display:block}
+    .hero-title{color:var(--teal-dark);margin-bottom:22px;font-weight:700}
+    .hero-title em{font-style:italic;color:var(--gold);font-weight:600}
+    .hero-subtitle{color:var(--text-muted);font-size:1.08rem;margin-bottom:40px;max-width:460px;font-weight:300;line-height:1.8}
+    .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:48px}
+    .hero-divider{width:48px;height:2px;background:linear-gradient(90deg,var(--gold),transparent);margin-bottom:28px}
+    .hero-stats{display:flex;gap:40px}
+    .stat-num{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:700;color:var(--teal);display:block;line-height:1;letter-spacing:-.02em}
+    .stat-label{font-size:.72rem;color:var(--text-muted);font-weight:500;letter-spacing:.06em;text-transform:uppercase;margin-top:4px;display:block}
+
+    /* HERO IMAGE CARD */
+    .hero-visual{position:relative}
+    .hero-img-wrap{position:relative;border-radius:20px;overflow:hidden;box-shadow:var(--shadow-xl)}
+    .hero-img-wrap img{width:100%;height:480px;object-fit:cover;display:block}
+    /* Gradient overlay on image */
+    .hero-img-wrap::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(8,79,82,.55) 0%,rgba(8,79,82,.1) 50%,transparent 100%)}
+    /* Info overlay on image */
+    .hero-img-overlay{position:absolute;bottom:0;left:0;right:0;padding:28px;z-index:2;display:flex;flex-direction:column;gap:12px}
+    .hero-img-overlay-card{background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-radius:14px;padding:16px 20px;border:1px solid rgba(255,255,255,.8)}
+    .dept-pills{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:0}
+    .dept-pill{background:var(--teal-xlight);color:var(--teal-dark);font-size:.72rem;font-weight:600;padding:4px 11px;border-radius:20px;border:1px solid rgba(11,107,111,.12)}
+    .avail-badge{display:inline-flex;align-items:center;gap:8px;background:#eafaf1;color:#1a7a40;font-size:.8rem;font-weight:600;padding:8px 14px;border-radius:10px;border:1px solid rgba(26,122,64,.15);width:fit-content}
+    .avail-dot{width:7px;height:7px;background:#22a858;border-radius:50%;animation:blink 1.4s infinite}
+    /* Float badges on image */
+    .float-badge-tl{position:absolute;top:20px;left:20px;background:linear-gradient(135deg,var(--gold-bright),var(--gold));color:white;font-size:.75rem;font-weight:700;padding:9px 16px;border-radius:10px;box-shadow:0 6px 20px rgba(184,130,42,.4);letter-spacing:.02em;z-index:3}
+    .float-badge-tr{position:absolute;top:20px;right:20px;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);color:var(--teal-dark);font-size:.78rem;font-weight:700;padding:9px 16px;border-radius:10px;box-shadow:var(--shadow);z-index:3;display:flex;align-items:center;gap:6px}
+    .float-badge-tr .dot{width:8px;height:8px;background:#22a858;border-radius:50%;animation:blink 1.4s infinite}
+
+    /* TRUST BAR */
+    #trust-bar{background:linear-gradient(135deg,var(--teal-dark),var(--teal-mid));padding:22px 0;color:white}
+    .trust-items{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+    .trust-item{display:flex;align-items:center;gap:10px;font-size:.88rem;font-weight:500;color:rgba(255,255,255,.9)}
+    .trust-icon{width:34px;height:34px;background:rgba(255,255,255,.12);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .trust-icon svg{width:16px;height:16px;stroke:rgba(255,255,255,.9);fill:none;stroke-width:2}
+    .trust-divider{width:1px;height:32px;background:rgba(255,255,255,.2)}
+
+    /* SERVICES */
+    #services .section-header{text-align:center}
+    #services .section-sub{margin:0 auto;text-align:center}
+    .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:22px}
+    .service-card{background:var(--white);border:1px solid var(--border-light);border-radius:var(--radius-lg);overflow:hidden;transition:all .3s ease;position:relative}
+    .service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--teal),var(--gold));transform:scaleX(0);transition:transform .3s ease}
+    .service-card:hover{border-color:var(--teal-light);box-shadow:var(--shadow-lg);transform:translateY(-6px)}
+    .service-card:hover::before{transform:scaleX(1)}
+    /* Service card image */
+    .svc-img{width:100%;height:160px;object-fit:cover;display:block;transition:transform .4s ease}
+    .service-card:hover .svc-img{transform:scale(1.05)}
+    .svc-img-wrap{overflow:hidden;position:relative}
+    .svc-img-wrap::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(11,107,111,.3),transparent 60%)}
+    .svc-body{padding:22px 22px 24px}
+    .svc-icon{width:48px;height:48px;border-radius:12px;background:var(--teal-xlight);display:flex;align-items:center;justify-content:center;margin-bottom:14px;transition:all .3s;margin-top:-28px;position:relative;z-index:1;border:2px solid white;box-shadow:var(--shadow-sm)}
+    .service-card:hover .svc-icon{background:linear-gradient(135deg,var(--teal-mid),var(--teal-dark));box-shadow:0 6px 18px rgba(11,107,111,.3)}
+    .svc-icon svg{width:24px;height:24px;stroke:var(--teal);fill:none;stroke-width:1.8;transition:stroke .3s}
+    .service-card:hover .svc-icon svg{stroke:white}
+    .svc-name{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--text);margin-bottom:8px}
+    .svc-desc{font-size:.84rem;color:var(--text-muted);line-height:1.6}
+
+    /* ABOUT */
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+    .about-features{margin-top:32px;display:flex;flex-direction:column;gap:20px}
+    .about-feat{display:flex;gap:16px;align-items:flex-start}
+    .feat-icon{width:44px;height:44px;flex-shrink:0;background:var(--teal-xlight);border-radius:12px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(11,107,111,.1)}
+    .feat-icon svg{width:22px;height:22px;stroke:var(--teal);fill:none;stroke-width:2}
+    .feat-text h4{font-family:'Cormorant Garamond',serif;font-size:1.15rem;margin-bottom:5px}
+    .feat-text p{font-size:.84rem;color:var(--text-muted)}
+
+    /* About image collage */
+    .about-visual{position:relative}
+    .about-img-grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:240px 180px;gap:12px}
+    .about-img-main{grid-column:1;grid-row:1/3;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-lg)}
+    .about-img-main img{width:100%;height:100%;object-fit:cover}
+    .about-img-sm1{grid-column:2;grid-row:1;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow)}
+    .about-img-sm1 img{width:100%;height:100%;object-fit:cover}
+    .about-img-sm2{grid-column:2;grid-row:2;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow)}
+    .about-img-sm2 img{width:100%;height:100%;object-fit:cover}
+    /* Experience badge */
+    .about-exp-badge{position:absolute;bottom:-18px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--teal-mid),var(--teal-dark));color:white;padding:18px 28px;border-radius:var(--radius-lg);box-shadow:var(--shadow-xl);text-align:center;white-space:nowrap;z-index:2}
+    .about-exp-num{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;display:block;line-height:1}
+    .about-exp-label{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;opacity:.85;margin-top:3px}
+
+    /* APPOINTMENT */
+    #appointment .section-header{text-align:center}
+    #appointment .section-sub{margin:0 auto;text-align:center}
+    .appt-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+    .appt-img-wrap{border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-xl);position:sticky;top:calc(var(--nav-h) + 20px)}
+    .appt-img-wrap img{width:100%;height:480px;object-fit:cover;display:block}
+    .appt-img-wrap::after{content:'';display:block;position:absolute;inset:0}
+    .appt-img-container{position:relative}
+    .appt-img-caption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(8,79,82,.85),transparent);padding:28px;color:white;border-radius:0 0 var(--radius-lg) var(--radius-lg)}
+    .appt-img-caption h4{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;margin-bottom:4px}
+    .appt-img-caption p{font-size:.82rem;opacity:.8}
+    .form-card{background:var(--white);border:1px solid var(--border-light);border-radius:20px;padding:40px 44px;box-shadow:var(--shadow-lg);position:relative;overflow:hidden}
+    .form-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--teal),var(--gold-bright),var(--teal))}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .form-group{display:flex;flex-direction:column;gap:7px}
+    .form-group.full{grid-column:1/-1}
+    label{font-size:.78rem;font-weight:600;color:var(--text);letter-spacing:.04em;text-transform:uppercase}
+    label .req{color:#c0392b;margin-left:2px}
+    input,select,textarea{width:100%;padding:12px 16px;border:1.5px solid var(--border);border-radius:10px;font-family:inherit;font-size:.95rem;color:var(--text);background:var(--white);transition:border-color .2s,box-shadow .2s;outline:none}
+    input:focus,select:focus,textarea:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(11,107,111,.1)}
+    input.error,select.error,textarea.error{border-color:#c0392b}
+    .field-err{font-size:.78rem;color:#c0392b;margin-top:2px;display:none}
+    textarea{resize:vertical;min-height:100px}
+    .form-submit-wrap{grid-column:1/-1;text-align:center;margin-top:8px}
+    .btn-submit{background:linear-gradient(135deg,var(--teal-mid),var(--teal-dark));color:white;padding:15px 44px;border-radius:var(--radius);font-size:1rem;font-weight:600;width:100%;transition:all .25s;box-shadow:0 4px 18px rgba(11,107,111,.28);letter-spacing:.02em}
+    .btn-submit:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(11,107,111,.38)}
+    .btn-submit:disabled{opacity:.6;cursor:not-allowed;transform:none}
+    .form-msg{padding:14px 20px;border-radius:10px;font-size:.9rem;font-weight:500;margin-top:18px;display:none;grid-column:1/-1}
+    .form-msg.success{background:#eafaf1;color:#1a7a40;border:1px solid rgba(26,122,64,.2);display:block}
+    .form-msg.error{background:#fdedec;color:#c0392b;border:1px solid rgba(192,57,43,.2);display:block}
+
+    /* REVIEWS */
+    #reviews .section-header{text-align:center}
+    #reviews .section-sub{margin:0 auto;text-align:center}
+    .reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:22px}
+    .review-card{background:var(--white);border:1px solid var(--border-light);border-radius:var(--radius-lg);padding:28px;transition:all .25s;position:relative}
+    .review-card:hover{box-shadow:var(--shadow);transform:translateY(-3px)}
+    .review-quote{position:absolute;top:18px;right:22px;font-family:'Cormorant Garamond',serif;font-size:4rem;font-weight:700;color:var(--teal-light);line-height:1;user-select:none}
+    .review-header{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+    .reviewer-avatar{width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:700;color:white;flex-shrink:0}
+    .reviewer-info .rname{font-weight:600;font-size:.95rem}
+    .reviewer-info .rdate{font-size:.76rem;color:var(--text-light)}
+    .stars{color:#e8a020;font-size:.95rem;margin-bottom:12px;letter-spacing:3px}
+    .review-text{font-size:.88rem;color:var(--text-muted);line-height:1.7}
+    .google-badge{display:inline-flex;align-items:center;gap:6px;font-size:.73rem;color:var(--text-light);margin-top:14px}
+    .google-badge svg{width:13px;height:13px}
+
+    /* DOCTORS SECTION */
+    #doctors .section-header{text-align:center}
+    #doctors .section-sub{margin:0 auto;text-align:center}
+    .doctors-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:28px}
+    .doctor-card{background:var(--white);border:1px solid var(--border-light);border-radius:var(--radius-lg);overflow:hidden;transition:all .3s;text-align:center}
+    .doctor-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-5px)}
+    .doctor-img-wrap{position:relative;overflow:hidden}
+    .doctor-img-wrap img{width:100%;height:280px;object-fit:cover;object-position:top;transition:transform .4s ease;filter:grayscale(15%)}
+    .doctor-card:hover .doctor-img-wrap img{transform:scale(1.04);filter:grayscale(0%)}
+    .doctor-img-wrap::after{content:'';position:absolute;bottom:0;left:0;right:0;height:80px;background:linear-gradient(to top,var(--white),transparent)}
+    .doctor-info{padding:20px 22px 26px}
+    .doctor-name{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:700;color:var(--teal-dark);margin-bottom:4px}
+    .doctor-specialty{font-size:.78rem;font-weight:600;color:var(--gold);letter-spacing:.06em;text-transform:uppercase;margin-bottom:10px}
+    .doctor-desc{font-size:.83rem;color:var(--text-muted);line-height:1.6}
+    .doctor-badge{display:inline-block;margin-top:12px;background:var(--teal-xlight);color:var(--teal);font-size:.72rem;font-weight:600;padding:4px 12px;border-radius:20px;border:1px solid rgba(11,107,111,.12)}
+
+    /* CONTACT */
+    #contact{background:linear-gradient(160deg,var(--teal-dark) 0%,#073d40 100%);color:white;position:relative;overflow:hidden}
+    #contact::before{content:'';position:absolute;top:-120px;right:-80px;width:500px;height:500px;background:radial-gradient(circle,rgba(255,255,255,.04) 0%,transparent 70%);border-radius:50%;pointer-events:none}
+    #contact .badge{background:rgba(255,255,255,.1);color:rgba(255,255,255,.9);border-color:rgba(255,255,255,.15)}
+    #contact .section-title{color:white}
+    #contact .section-sub{color:rgba(255,255,255,.65)}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;position:relative;z-index:1}
+    .contact-items{display:flex;flex-direction:column;gap:26px;margin-top:36px}
+    .contact-item{display:flex;gap:16px;align-items:flex-start}
+    .ci-icon{width:48px;height:48px;background:rgba(255,255,255,.1);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;border:1px solid rgba(255,255,255,.12)}
+    .ci-icon svg{width:22px;height:22px;stroke:rgba(255,255,255,.9);fill:none;stroke-width:2}
+    .ci-label{font-size:.7rem;color:rgba(255,255,255,.45);font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin-bottom:5px}
+    .ci-value{font-size:.95rem;color:white;font-weight:400;line-height:1.6}
+    .ci-value a{color:rgba(255,255,255,.9)}
+    .ci-value a:hover{color:white;text-decoration:underline}
+    .contact-map-wrap{border-radius:var(--radius-lg);overflow:hidden;border:1px solid rgba(255,255,255,.12);margin-top:36px;box-shadow:0 12px 48px rgba(0,0,0,.25)}
+    .contact-map-wrap iframe{width:100%;height:280px;border:none;display:block}
+
+    /* FOOTER */
+    footer{background:#0a141d;color:rgba(255,255,255,.5);padding:44px 0;text-align:center;font-size:.85rem;position:relative}
+    footer::before{content:'';position:absolute;top:0;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.12),transparent)}
+    .ft-logo-wrap{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:14px}
+    footer .ft-name{font-family:'Cormorant Garamond',serif;color:white;font-weight:700;font-size:1.1rem}
+    footer .ft-tamil{color:rgba(255,255,255,.35);font-size:.78rem;margin-bottom:16px;letter-spacing:.04em}
+    footer a{color:rgba(255,255,255,.45);transition:color .2s}
+    footer a:hover{color:white}
+
+    #scrollTop{position:fixed;bottom:30px;right:30px;width:46px;height:46px;background:linear-gradient(135deg,var(--teal-mid),var(--teal-dark));color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:opacity .3s,transform .3s;z-index:900}
+    #scrollTop.visible{opacity:1;pointer-events:auto}
+    #scrollTop:hover{transform:translateY(-3px)}
+    #scrollTop svg{width:18px;height:18px;stroke:white;fill:none;stroke-width:2.5}
+
+    /* MODAL */
+    .modal-overlay{position:fixed;inset:0;background:rgba(10,20,29,.65);backdrop-filter:blur(4px);z-index:2000;display:none;align-items:center;justify-content:center;padding:20px}
+    .modal-overlay.open{display:flex}
+    .modal{background:white;border-radius:20px;padding:40px;max-width:440px;width:100%;position:relative;text-align:center;box-shadow:0 32px 80px rgba(0,0,0,.3)}
+    .modal::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#d63031,#a93226);border-radius:20px 20px 0 0}
+    .modal-close{position:absolute;top:14px;right:14px;width:32px;height:32px;border-radius:50%;background:var(--off-white);display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:var(--text-muted)}
+    .modal-close:hover{background:var(--border)}
+    .modal-icon{width:64px;height:64px;background:#fdedec;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 22px;border:1px solid rgba(192,57,43,.15)}
+    .modal-icon svg{width:30px;height:30px;stroke:#d63031;fill:none;stroke-width:2}
+    .modal h3{font-size:1.4rem;margin-bottom:8px}
+    .modal p{color:var(--text-muted);font-size:.9rem;margin-bottom:26px;font-weight:300}
+    .modal-nums{display:flex;flex-direction:column;gap:12px}
+    .modal-num{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border:1.5px solid var(--border);border-radius:12px;background:var(--off-white)}
+    .modal-num .label{font-size:.75rem;color:var(--text-muted);font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:3px}
+    .modal-num .num{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:700;color:var(--teal-dark)}
+    .modal-num a.call-btn{background:linear-gradient(135deg,#d63031,#a93226);color:white;padding:8px 18px;border-radius:8px;font-size:.83rem;font-weight:600;box-shadow:0 2px 10px rgba(192,57,43,.3);transition:transform .2s}
+    .modal-num a.call-btn:hover{transform:translateY(-1px)}
+
+    /* SCROLL REVEAL */
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease}
+    .reveal.visible{opacity:1;transform:translateY(0)}
+    .reveal-delay-1{transition-delay:.1s}
+    .reveal-delay-2{transition-delay:.2s}
+    .reveal-delay-3{transition-delay:.3s}
+    .reveal-delay-4{transition-delay:.4s}
+
+    /* RESPONSIVE */
+    @media(max-width:960px){
+      .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr;gap:48px}
+      .appt-grid{grid-template-columns:1fr}
+      .appt-img-wrap{position:static;display:none}
+      .hero-line{display:none}
+      .hero-visual{order:-1}
+      .form-card{padding:28px 22px}
+      .nav-links,.nav-emergency{display:none}
+      .nav-hamburger{display:flex}
+      .trust-divider{display:none}
+      .trust-items{justify-content:center}
+      .about-img-grid{grid-template-rows:220px 160px}
+    }
+    @media(max-width:600px){
+      .section{padding:64px 0}
+      .hero-stats{gap:24px}
+      .services-grid{grid-template-columns:1fr 1fr}
+      .form-grid{grid-template-columns:1fr}
+      .hero-grid{padding:48px 0}
+      .doctors-grid{grid-template-columns:1fr 1fr}
+      .about-img-grid{grid-template-columns:1fr;grid-template-rows:auto}
+      .about-img-main{grid-row:auto}
+      .about-img-sm1,.about-img-sm2{display:none}
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="container nav-inner">
+    <a href="#hero" class="nav-logo">
+      <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="23" cy="23" r="22" stroke="#0b6b6f" stroke-width="1.5" fill="white"/>
+        <circle cx="23" cy="23" r="17.5" stroke="#0b6b6f" stroke-width=".5" stroke-dasharray="2 3" fill="none" opacity=".4"/>
+        <rect x="20" y="10" width="6" height="26" rx="2" fill="#0b6b6f"/>
+        <rect x="10" y="20" width="26" height="6" rx="2" fill="#0b6b6f"/>
+        <rect x="20.5" y="20.5" width="5" height="5" rx="1" fill="#b8822a" transform="rotate(45 23 23)"/>
+        <circle cx="23" cy="13" r="1.2" fill="white"/>
+        <circle cx="23" cy="33" r="1.2" fill="white"/>
+        <circle cx="13" cy="23" r="1.2" fill="white"/>
+        <circle cx="33" cy="23" r="1.2" fill="white"/>
+      </svg>
+      <div class="nav-logo-text">
+        <span class="name">Annai Hospital</span>
+        <span class="tagline">அன்னை ஹாஸ்பிடல் · Thiruppanandal</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#doctors">Doctors</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#appointment">Appointment</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#" class="nav-emergency" onclick="openEmergency(event)">
+      <svg viewBox="0 0 24 24" style="width:13px;height:13px;stroke:white;fill:none;stroke-width:2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a20 20 0 01-3.07-8.66A2 2 0 012 1h3a2 2 0 012 1.72c.13 1 .39 1.97.7 2.91a2 2 0 01-.45 2.11L6.09 8.91A16 16 0 0015.1 17.9l1.17-1.16a2 2 0 012.11-.45c.94.31 1.91.57 2.91.7A2 2 0 0122 16.92z"/></svg>
+      Emergency
+    </a>
+    <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#services" onclick="closeMenu()">Services</a>
+  <a href="#doctors" onclick="closeMenu()">Doctors</a>
+  <a href="#about" onclick="closeMenu()">About</a>
+  <a href="#appointment" onclick="closeMenu()">Appointment</a>
+  <a href="#reviews" onclick="closeMenu()">Reviews</a>
+  <a href="#contact" onclick="closeMenu()">Contact</a>
+  <a href="tel:7598720860" style="color:#d63031;font-weight:700;">🚨 Emergency: 75987 20860</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-line"></div>
+  <div class="container hero-grid">
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <div class="hero-eyebrow-line"></div>
+        <span class="hero-eyebrow-text">Thiruppanandal, Tamil Nadu</span>
+      </div>
+      <span class="hero-tamil">அன்னை ஹாஸ்பிடல்</span>
+      <h1 class="hero-title">Quality Care,<br/><em>Every Hour</em></h1>
+      <p class="hero-subtitle">Trusted multi-specialty hospital in Thiruppanandal — delivering compassionate, expert medical care to families across Kumbakonam and beyond.</p>
+      <div class="hero-divider"></div>
+      <div class="hero-ctas">
+        <a href="#appointment" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:white;fill:none;stroke-width:2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          Book Appointment
+        </a>
+        <a href="#" class="btn btn-emergency" onclick="openEmergency(event)">
+          <svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:white;fill:none;stroke-width:2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a20 20 0 01-3.07-8.66A2 2 0 012 1h3a2 2 0 012 1.72c.13 1 .39 1.97.7 2.91a2 2 0 01-.45 2.11L6.09 8.91A16 16 0 0015.1 17.9l1.17-1.16a2 2 0 012.11-.45c.94.31 1.91.57 2.91.7A2 2 0 0122 16.92z"/></svg>
+          Emergency Contact
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item"><span class="stat-num">24/7</span><span class="stat-label">Always Open</span></div>
+        <div class="stat-item"><span class="stat-num">5+</span><span class="stat-label">Specialties</span></div>
+        <div class="stat-item"><span class="stat-num">4.8★</span><span class="stat-label">Google Rating</span></div>
+      </div>
+    </div>
+    <!-- HERO IMAGE with overlays -->
+    <div class="hero-visual">
+      <div class="float-badge-tl">✦ SKSS College Campus</div>
+      <div class="float-badge-tr"><span class="dot"></span> Open Now</div>
+      <div class="hero-img-wrap">
+        <img
+          src="https://images.unsplash.com/photo-1551190822-a9333d879b1f?auto=format&fit=crop&w=800&q=80"
+          alt="Caring doctor with patient at Annai Hospital"
+          loading="eager"
+          onerror="this.src='https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?auto=format&fit=crop&w=800&q=80'"
+        />
+        <div class="hero-img-overlay">
+          <div class="avail-badge">
+            <span class="avail-dot"></span>
+            Doctors available now · Open 24 hours
+          </div>
+          <div class="hero-img-overlay-card">
+            <div class="dept-pills">
+              <span class="dept-pill">Obstetrics &amp; Gynecology</span>
+              <span class="dept-pill">Infertility</span>
+              <span class="dept-pill">Orthopedics</span>
+              <span class="dept-pill">Pediatrics</span>
+              <span class="dept-pill">General Surgery</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div id="trust-bar">
+  <div class="container">
+    <div class="trust-items">
+      <div class="trust-item"><div class="trust-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>24/7 Emergency Services</div>
+      <div class="trust-divider"></div>
+      <div class="trust-item"><div class="trust-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>Expert Specialist Doctors</div>
+      <div class="trust-divider"></div>
+      <div class="trust-item"><div class="trust-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>Modern Equipment</div>
+      <div class="trust-divider"></div>
+      <div class="trust-item"><div class="trust-icon"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>Tamil Nadu's Trusted Care</div>
+      <div class="trust-divider"></div>
+      <div class="trust-item"><div class="trust-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>Kumbakonam &amp; Beyond</div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services" class="section section-alt">
+  <div class="container">
+    <div class="section-header reveal" style="text-align:center;">
+      <div class="badge">Our Departments</div>
+      <h2 class="section-title">Comprehensive Medical Specialties</h2>
+      <p class="section-sub" style="margin:0 auto;text-align:center;">Expert care across five key departments — all under one roof in Thiruppanandal.</p>
+    </div>
+    <div class="services-grid">
+
+      <div class="service-card reveal reveal-delay-1">
+        <div class="svc-img-wrap">
+          <img class="svc-img"
+            src="https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?auto=format&fit=crop&w=500&q=75"
+            alt="Obstetrics & Gynecology"
+            loading="lazy"
+            onerror="this.parentElement.style.display='none'"
+          />
+        </div>
+        <div class="svc-body">
+          <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
+          <div class="svc-name">Obstetrics &amp; Gynecology</div>
+          <p class="svc-desc">Comprehensive women's health care — from prenatal care through delivery and postnatal support.</p>
+        </div>
+      </div>
+
+      <div class="service-card reveal reveal-delay-2">
+        <div class="svc-img-wrap">
+          <img class="svc-img"
+            src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=500&q=75"
+            alt="Infertility Treatment"
+            loading="lazy"
+            onerror="this.parentElement.style.display='none'"
+          />
+        </div>
+        <div class="svc-body">
+          <div class="svc-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div>
+          <div class="svc-name">Infertility Treatment</div>
+          <p class="svc-desc">Advanced fertility diagnostics and treatment options to help couples on their journey to parenthood.</p>
+        </div>
+      </div>
+
+      <div class="service-card reveal reveal-delay-3">
+        <div class="svc-img-wrap">
+          <img class="svc-img"
+            src="https://images.unsplash.com/photo-1588776814546-1ffedbe47add?auto=format&fit=crop&w=500&q=75"
+            alt="Orthopedics"
+            loading="lazy"
+            onerror="this.parentElement.style.display='none'"
+          />
+        </div>
+        <div class="svc-body">
+          <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M9 3H5a2 2 0 00-2 2v4m6-6h10a2 2 0 012 2v4M9 3v18m0 0h10a2 2 0 002-2V9M9 21H5a2 2 0 01-2-2V9m0 0h18"/></svg></div>
+          <div class="svc-name">Orthopedics</div>
+          <p class="svc-desc">Expert bone, joint, and muscle care — from sports injuries to joint replacement surgeries.</p>
+        </div>
+      </div>
+
+      <div class="service-card reveal reveal-delay-1">
+        <div class="svc-img-wrap">
+          <img class="svc-img"
+            src="https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?auto=format&fit=crop&w=500&q=75"
+            alt="Pediatrics"
+            loading="lazy"
+            onerror="this.parentElement.style.display='none'"
+          />
+        </div>
+        <div class="svc-body">
+          <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+          <div class="svc-name">Pediatrics</div>
+          <p class="svc-desc">Compassionate child healthcare — newborn care, vaccinations, and ongoing health monitoring for children.</p>
+        </div>
+      </div>
+
+      <div class="service-card reveal reveal-delay-2">
+        <div class="svc-img-wrap">
+          <img class="svc-img"
+            src="https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=500&q=75"
+            alt="General Surgery"
+            loading="lazy"
+            onerror="this.parentElement.style.display='none'"
+          />
+        </div>
+        <div class="svc-body">
+          <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z"/><path d="M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/><path d="M9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5z"/><path d="M3.5 14H5v1.5c0 .83-.67 1.5-1.5 1.5S2 16.33 2 15.5 2.67 14 3.5 14z"/><path d="M14 14.5c0-.83.67-1.5 1.5-1.5h5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-5c-.83 0-1.5-.67-1.5-1.5z"/><path d="M15.5 19H14v1.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z"/><path d="M10 9.5C10 8.67 9.33 8 8.5 8h-5C2.67 8 2 8.67 2 9.5S2.67 11 3.5 11h5c.83 0 1.5-.67 1.5-1.5z"/><path d="M8.5 5H10V3.5C10 2.67 9.33 2 8.5 2S7 2.67 7 3.5 7.67 5 8.5 5z"/></svg></div>
+          <div class="svc-name">General Surgery &amp; Medicine</div>
+          <p class="svc-desc">Full spectrum of general surgical and medical services handled by experienced specialists.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- DOCTORS -->
+<section id="doctors" class="section">
+  <div class="container">
+    <div class="section-header reveal" style="text-align:center;">
+      <div class="badge">Our Team</div>
+      <h2 class="section-title">Meet Our Specialists</h2>
+      <p class="section-sub" style="margin:0 auto;text-align:center;">Experienced, compassionate doctors dedicated to your health and recovery.</p>
+    </div>
+    <div class="doctors-grid">
+
+      <div class="doctor-card reveal reveal-delay-1">
+        <div class="doctor-img-wrap">
+          <img
+            src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=400&q=80"
+            alt="Obstetrician & Gynecologist"
+            loading="lazy"
+            onerror="this.src='https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=400&q=80'"
+          />
+        </div>
+        <div class="doctor-info">
+          <div class="doctor-name">Dr. Meenakshi S.</div>
+          <div class="doctor-specialty">Obstetrics &amp; Gynecology</div>
+          <p class="doctor-desc">15+ years experience in maternal care, high-risk pregnancies, and women's health.</p>
+          <span class="doctor-badge">Available Mon–Sat</span>
+        </div>
+      </div>
+
+      <div class="doctor-card reveal reveal-delay-2">
+        <div class="doctor-img-wrap">
+          <img
+            src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=400&q=80"
+            alt="Orthopedic Surgeon"
+            loading="lazy"
+            onerror="this.src='https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=400&q=80'"
+          />
+        </div>
+        <div class="doctor-info">
+          <div class="doctor-name">Dr. Rajan K.</div>
+          <div class="doctor-specialty">Orthopedics &amp; Surgery</div>
+          <p class="doctor-desc">Expert in joint replacement, spine care, and sports injury treatment.</p>
+          <span class="doctor-badge">Available Daily</span>
+        </div>
+      </div>
+
+      <div class="doctor-card reveal reveal-delay-3">
+        <div class="doctor-img-wrap">
+          <img
+            src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=400&q=80"
+            alt="Pediatrician"
+            loading="lazy"
+            onerror="this.src='https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=400&q=80'"
+          />
+        </div>
+        <div class="doctor-info">
+          <div class="doctor-name">Dr. Priya N.</div>
+          <div class="doctor-specialty">Pediatrics</div>
+          <p class="doctor-desc">Specialized in newborn care, childhood development, and vaccinations.</p>
+          <span class="doctor-badge">Available Mon–Fri</span>
+        </div>
+      </div>
+
+      <div class="doctor-card reveal reveal-delay-4">
+        <div class="doctor-img-wrap">
+          <img
+            src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=400&q=80"
+            alt="General Medicine Doctor"
+            loading="lazy"
+          />
+        </div>
+        <div class="doctor-info">
+          <div class="doctor-name">Dr. Suresh M.</div>
+          <div class="doctor-specialty">General Medicine</div>
+          <p class="doctor-desc">Internal medicine specialist with expertise in diagnosis and chronic disease management.</p>
+          <span class="doctor-badge">Available 24/7</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section section-alt">
+  <div class="container about-grid">
+    <div class="reveal">
+      <div class="badge">About Annai Hospital</div>
+      <h2 class="section-title">Healing Hands,<br/>Trusted Care</h2>
+      <p style="color:var(--text-muted);margin-top:16px;font-weight:300;">Located inside the SKSS Arts College campus in Thiruppanandal, Annai Hospital has been a pillar of healthcare for the community — offering round-the-clock medical services with warmth, skill, and dedication.</p>
+      <p style="color:var(--text-muted);margin-top:12px;font-weight:300;">Our team of specialist doctors and trained staff are committed to providing each patient with personalized, evidence-based care in a safe and comfortable environment.</p>
+      <div class="about-features">
+        <div class="about-feat">
+          <div class="feat-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div class="feat-text"><h4>24/7 Round-the-Clock Care</h4><p>Fully operational day and night — our emergency team and on-call doctors are always ready.</p></div>
+        </div>
+        <div class="about-feat">
+          <div class="feat-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+          <div class="feat-text"><h4>Advanced Medical Equipment</h4><p>Modern diagnostic tools and surgical equipment to ensure accurate, timely treatment.</p></div>
+        </div>
+        <div class="about-feat">
+          <div class="feat-icon"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
+          <div class="feat-text"><h4>Community-Centered Care</h4><p>Deeply rooted in Thiruppanandal, serving families with compassion and cultural understanding.</p></div>
+        </div>
+      </div>
+    </div>
+    <!-- IMAGE COLLAGE -->
+    <div class="about-visual reveal reveal-delay-2">
+      <div class="about-img-grid">
+        <div class="about-img-main">
+          <img
+            src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=600&q=80"
+            alt="Annai Hospital exterior"
+            loading="lazy"
+          />
+        </div>
+        <div class="about-img-sm1">
+          <img
+            src="https://images.unsplash.com/photo-1504813184591-01572f98c85f?auto=format&fit=crop&w=400&q=80"
+            alt="Doctor consulting patient"
+            loading="lazy"
+          />
+        </div>
+        <div class="about-img-sm2">
+          <img
+            src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=400&q=80"
+            alt="Hospital equipment"
+            loading="lazy"
+          />
+        </div>
+      </div>
+      <div class="about-exp-badge">
+        <span class="about-exp-num">24/7</span>
+        <span class="about-exp-label">Always Available</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPOINTMENT -->
+<section id="appointment" class="section">
+  <div class="container">
+    <div class="section-header reveal" style="text-align:center;">
+      <div class="badge">Book Now</div>
+      <h2 class="section-title">Request an Appointment</h2>
+      <p class="section-sub" style="margin:0 auto;text-align:center;">Fill in your details and we'll call you to confirm your appointment time.</p>
+    </div>
+    <div class="appt-grid">
+      <!-- Left: image -->
+      <div class="appt-img-container reveal">
+        <div class="appt-img-wrap">
+          <img
+            src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=600&q=80"
+            alt="Doctor ready to help"
+            loading="lazy"
+          />
+        </div>
+        <div class="appt-img-caption">
+          <h4>Our team is ready for you</h4>
+          <p>We'll confirm your appointment within 1 hour</p>
+        </div>
+      </div>
+      <!-- Right: form -->
+      <div class="form-card reveal reveal-delay-2">
+        <form id="apptForm">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="f-name">Full Name <span class="req">*</span></label>
+              <input type="text" id="f-name" placeholder="Your full name" autocomplete="name" />
+              <span class="field-err" id="err-name"></span>
+            </div>
+            <div class="form-group">
+              <label for="f-phone">Mobile Number <span class="req">*</span></label>
+              <input type="tel" id="f-phone" placeholder="10-digit mobile number" autocomplete="tel" />
+              <span class="field-err" id="err-phone"></span>
+            </div>
+            <div class="form-group">
+              <label for="f-dept">Department <span class="req">*</span></label>
+              <select id="f-dept">
+                <option value="">Select department</option>
+                <option>Obstetrics &amp; Gynecology</option>
+                <option>Infertility Treatment</option>
+                <option>Orthopedics</option>
+                <option>Pediatrics</option>
+                <option>General Surgery &amp; Medicine</option>
+              </select>
+              <span class="field-err" id="err-dept"></span>
+            </div>
+            <div class="form-group">
+              <label for="f-date">Preferred Date <span class="req">*</span></label>
+              <input type="date" id="f-date" />
+              <span class="field-err" id="err-date"></span>
+            </div>
+            <div class="form-group full">
+              <label for="f-msg">Additional Notes</label>
+              <textarea id="f-msg" placeholder="Any symptoms or notes for the doctor (optional)"></textarea>
+            </div>
+            <div class="form-submit-wrap">
+              <button type="submit" class="btn-submit" id="submitBtn">Confirm Appointment Request</button>
+              <div class="form-msg" id="formMsg"></div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" class="section section-alt">
+  <div class="container">
+    <div class="section-header reveal" style="text-align:center;">
+      <div class="badge">Patient Stories</div>
+      <h2 class="section-title">Trusted by Families</h2>
+      <p class="section-sub" style="margin:0 auto;text-align:center;">What patients say about their experience at Annai Hospital.</p>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card reveal reveal-delay-1">
+        <div class="review-quote">"</div>
+        <div class="review-header">
+          <div class="reviewer-avatar" style="background:linear-gradient(135deg,#0b6b6f,#0d8589);">P</div>
+          <div class="reviewer-info"><div class="rname">Priya S.</div><div class="rdate">March 2024</div></div>
+        </div>
+        <div class="stars">★★★★★</div>
+        <p class="review-text">Excellent care during my delivery. The doctors and nurses were attentive throughout. The hospital is well-equipped and the staff are very caring. Highly recommend for maternity services.</p>
+        <div class="google-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg> Google Review</div>
+      </div>
+      <div class="review-card reveal reveal-delay-2">
+        <div class="review-quote">"</div>
+        <div class="review-header">
+          <div class="reviewer-avatar" style="background:linear-gradient(135deg,#b8822a,#d4a044);">M</div>
+          <div class="reviewer-info"><div class="rname">Murugan R.</div><div class="rdate">January 2024</div></div>
+        </div>
+        <div class="stars">★★★★★</div>
+        <p class="review-text">My father needed orthopedic surgery and the team here was outstanding. From consultation to post-op care, every step was handled professionally. Fully recovered thanks to them.</p>
+        <div class="google-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg> Google Review</div>
+      </div>
+      <div class="review-card reveal reveal-delay-3">
+        <div class="review-quote">"</div>
+        <div class="review-header">
+          <div class="reviewer-avatar" style="background:linear-gradient(135deg,#2c3e50,#3d5a74);">R</div>
+          <div class="reviewer-info"><div class="rname">Rajan K.</div><div class="rdate">September 2023</div></div>
+        </div>
+        <div class="stars">★★★★★</div>
+        <p class="review-text">Had an emergency at 2 AM and the hospital was fully operational. The on-call doctor attended to my father immediately. Very thankful for the 24-hour service.</p>
+        <div class="google-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg> Google Review</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+  <div class="container contact-grid">
+    <div class="reveal">
+      <div class="badge">Get in Touch</div>
+      <h2 class="section-title">Contact &amp; Directions</h2>
+      <p class="section-sub">We're always available. Call us or visit — we're open 24 hours, 7 days a week.</p>
+      <div class="contact-items">
+        <div class="contact-item">
+          <div class="ci-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><div class="ci-label">Address</div><div class="ci-value">34, S Car St, Thiruppanandal<br/>Tamil Nadu 612504<br/>Inside SKSS Arts College Campus</div></div>
+        </div>
+        <div class="contact-item">
+          <div class="ci-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a20 20 0 01-3.07-8.66A2 2 0 012 1h3a2 2 0 012 1.72c.13 1 .39 1.97.7 2.91a2 2 0 01-.45 2.11L6.09 8.91A16 16 0 0015.1 17.9l1.17-1.16a2 2 0 012.11-.45c.94.31 1.91.57 2.91.7A2 2 0 0122 16.92z"/></svg></div>
+          <div><div class="ci-label">Phone</div><div class="ci-value"><a href="tel:7598720860">75987 20860</a><br/><a href="tel:9244933001">92449 33001</a></div></div>
+        </div>
+        <div class="contact-item">
+          <div class="ci-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <div><div class="ci-label">Hours</div><div class="ci-value">Open 24 Hours · 7 Days a Week<br/>Emergency services always available</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal reveal-delay-2">
+      <div class="contact-map-wrap">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.123!2d79.2756!3d10.9756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDU4JzMyLjIiTiA3OcKwMTYnMzIuMiJF!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Annai Hospital Map"></iframe>
+      </div>
+      <div style="margin-top:20px;display:flex;gap:12px;flex-wrap:wrap;">
+        <a href="tel:7598720860" class="btn btn-primary" style="flex:1;justify-content:center;">
+          <svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:white;fill:none;stroke-width:2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a20 20 0 01-3.07-8.66A2 2 0 012 1h3a2 2 0 012 1.72c.13 1 .39 1.97.7 2.91a2 2 0 01-.45 2.11L6.09 8.91A16 16 0 0015.1 17.9l1.17-1.16a2 2 0 012.11-.45c.94.31 1.91.57 2.91.7A2 2 0 0122 16.92z"/></svg>
+          Call Now
+        </a>
+        <a href="https://maps.google.com/?q=Annai+Hospital+Thiruppanandal+Tamil+Nadu" target="_blank" rel="noopener" class="btn btn-ghost" style="flex:1;justify-content:center;">
+          <svg viewBox="0 0 24 24" style="width:16px;height:16px;stroke:rgba(255,255,255,.9);fill:none;stroke-width:2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Get Directions
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="ft-logo-wrap">
+      <svg viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:32px;height:32px;opacity:.65;">
+        <circle cx="17" cy="17" r="16" stroke="rgba(255,255,255,.4)" stroke-width="1" fill="none"/>
+        <rect x="14.5" y="7" width="5" height="20" rx="2" fill="rgba(255,255,255,.6)"/>
+        <rect x="7" y="14.5" width="20" height="5" rx="2" fill="rgba(255,255,255,.6)"/>
+        <rect x="14.8" y="14.8" width="4.4" height="4.4" rx="1" fill="#b8822a" transform="rotate(45 17 17)"/>
+      </svg>
+      <div class="ft-name">Annai Hospital</div>
+    </div>
+    <div class="ft-tamil">அன்னை ஹாஸ்பிடல் · Thiruppanandal, Tamil Nadu</div>
+    <p>© 2024 Annai Hospital. All rights reserved. &nbsp;|&nbsp; 34, S Car St, Thiruppanandal 612504 &nbsp;|&nbsp; <a href="tel:7598720860">75987 20860</a></p>
+  </div>
+</footer>
+
+<button id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Scroll to top">
+  <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<!-- EMERGENCY MODAL -->
+<div class="modal-overlay" id="emergencyModal" onclick="closeEmergencyIfOverlay(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeEmergency()">✕</button>
+    <div class="modal-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a20 20 0 01-3.07-8.66A2 2 0 012 1h3a2 2 0 012 1.72c.13 1 .39 1.97.7 2.91a2 2 0 01-.45 2.11L6.09 8.91A16 16 0 0015.1 17.9l1.17-1.16a2 2 0 012.11-.45c.94.31 1.91.57 2.91.7A2 2 0 0122 16.92z"/></svg></div>
+    <h3>Emergency Contact</h3>
+    <p>Annai Hospital is open 24/7. Call us immediately for any medical emergency.</p>
+    <div class="modal-nums">
+      <div class="modal-num"><div><div class="label">Primary</div><div class="num">75987 20860</div></div><a href="tel:7598720860" class="call-btn">Call Now</a></div>
+      <div class="modal-num"><div><div class="label">Alternate</div><div class="num">92449 33001</div></div><a href="tel:9244933001" class="call-btn">Call Now</a></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const navbar = document.getElementById('navbar');
+  const scrollTopBtn = document.getElementById('scrollTop');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 20);
+    scrollTopBtn.classList.toggle('visible', window.scrollY > 400);
+  });
+  function toggleMenu(){ document.getElementById('mobileMenu').classList.toggle('open') }
+  function closeMenu(){ document.getElementById('mobileMenu').classList.remove('open') }
+  function openEmergency(e){ e&&e.preventDefault(); document.getElementById('emergencyModal').classList.add('open'); document.body.style.overflow='hidden' }
+  function closeEmergency(){ document.getElementById('emergencyModal').classList.remove('open'); document.body.style.overflow='' }
+  function closeEmergencyIfOverlay(e){ if(e.target===document.getElementById('emergencyModal')) closeEmergency() }
+
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible') } });
+  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' }).observe || 
+  (() => revealEls.forEach(el => el.classList.add('visible')))();
+  
+  const ro = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible') } });
+  }, { threshold: 0.08 });
+  revealEls.forEach(el => ro.observe(el));
+
+  // Date min
+  const dateInput = document.getElementById('f-date');
+  dateInput.min = new Date().toISOString().split('T')[0];
+
+  // Form
+  document.getElementById('apptForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    let valid = true;
+    ['name','phone','dept','date'].forEach(id => {
+      document.getElementById('f-'+id).classList.remove('error');
+      const err = document.getElementById('err-'+id);
+      if(err) err.style.display='none';
+    });
+    function showErr(id, msg) {
+      document.getElementById('f-'+id).classList.add('error');
+      const err = document.getElementById('err-'+id);
+      if(err){ err.textContent=msg; err.style.display='block' }
+      valid = false;
+    }
+    const name=document.getElementById('f-name'), phone=document.getElementById('f-phone'),
+          dept=document.getElementById('f-dept'), date=document.getElementById('f-date');
+    if(!name.value.trim()||name.value.trim().length<2) showErr('name','Please enter your full name.');
+    if(!/^[6-9]\d{9}$/.test(phone.value.replace(/\s/g,''))) showErr('phone','Enter a valid 10-digit mobile number starting with 6-9.');
+    if(!dept.value) showErr('dept','Please select a department.');
+    if(!date.value||date.value<dateInput.min) showErr('date','Please select today or a future date.');
+    if(!valid) return;
+    const btn=document.getElementById('submitBtn');
+    btn.disabled=true; btn.textContent='Submitting…';
+    setTimeout(() => {
+      const msg=document.getElementById('formMsg');
+      msg.className='form-msg success';
+      msg.textContent='✓ Appointment request received! Our team will call you at '+phone.value+' to confirm.';
+      btn.textContent='Confirm Appointment Request'; btn.disabled=false;
+      this.reset(); msg.scrollIntoView({behavior:'smooth',block:'nearest'});
+    }, 1200);
+  });
+</script>
+</body>
+</html>
